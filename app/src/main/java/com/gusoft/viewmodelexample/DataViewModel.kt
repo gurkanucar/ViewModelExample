@@ -6,13 +6,12 @@ import androidx.lifecycle.ViewModel
 class DataViewModel : ViewModel() {
     var number: Int = 0
     val currentNumber: MutableLiveData<Int> by lazy {
-        MutableLiveData<Int>()
+        MutableLiveData<Int>().apply { postValue(number) }
     }
 
     val currentBoolean: MutableLiveData<Boolean> by lazy {
         MutableLiveData<Boolean>()
     }
-
 
 
 }
